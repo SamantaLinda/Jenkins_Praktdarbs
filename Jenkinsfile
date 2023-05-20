@@ -20,7 +20,7 @@ pipeline {
         stage('Deploy to DEV') {
             steps {
                 script{
-                    deploy("DEV")
+                    deploy("DEV", 7001)
                 }
             }
         }
@@ -42,8 +42,8 @@ def deps(){
     //bat "npm test"
 }
 
-def deploy(String environment){ 
+def deploy(String environment, int port){ 
     echo "Deployment to ${environment} has started.."
     bat "C:\\Users\\Samanta\\AppData\\Roaming\\npm\\pm2 delete \"books-${environment}\" & EXIT /B 0"
-    bat "C:\\Users\\Samanta\\AppData\\Roaming\\npm\\pm2 start -n \"books-${environment}\" index.js -- 7001"
+    bat "C:\\Users\\Samanta\\AppData\\Roaming\\npm\\pm2 start -n \"books-${environment}\" index.js -- ${port}"
 }
