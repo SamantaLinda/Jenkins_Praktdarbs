@@ -29,7 +29,7 @@ pipeline {
 
 def build(){
     echo "Building of node application is starting, installing all required dependencies.."
-    bat "npm install"
+    //bat "npm install"
     bat "npm install -g pm2"
     bat "npm install --save-dev mocha"
 
