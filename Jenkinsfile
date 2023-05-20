@@ -44,6 +44,6 @@ def deps(){
 
 def deploy(String environment){ 
     echo "Deployment to ${environment} has started.."
-    bat "C:\\Users\\Samanta\\AppData\\Roaming\\npm\\pm2 delete \"greetings-app-${environment}\" & EXIT /B 0"bat "C:\\Users\\Samanta\\AppData\\Roaming\\npm\\pm2 start app.py --name \"greetings-app-${environment}\""
-    bat "C:\\Users\\Samanta\\AppData\\Roaming\\npm\\pm2 start \"greetings-app-${environment}\" index.js -- 7001"
+    bat "C:\\Users\\Samanta\\AppData\\Roaming\\npm\\pm2 delete \"books-${environment}\" & EXIT /B 0"bat "C:\\Users\\Samanta\\AppData\\Roaming\\npm\\pm2 start app.py --name \"greetings-app-${environment}\""
+    bat "C:\\Users\\Samanta\\AppData\\Roaming\\npm\\pm2 start \"books-${environment}\" index.js -- 7001"
 }
