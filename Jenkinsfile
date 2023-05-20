@@ -39,8 +39,10 @@ def deps(){
     echo "Installing pip deps"
     bat "npm install"
     bat "dir"
+    //bat "npm test"
 }
 
 def deploy(String environment){ 
     echo "Deployment to ${environment} has started.."
+     bat "C:\\Users\\Samanta\\AppData\\Roaming\\npm\\pm2 delete \"greetings-app-${environment}\" & EXIT /B 0"
 }
